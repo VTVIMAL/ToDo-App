@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block Title %}Task Detail{% endblock Title %}
+
+{% block content %}
+<section class="task-detail">
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ task.title }}</h1>
+            {% if task.completed == True %}
+            <h2>Status: Completed</h2>
+            {% else %}
+            <h2>Status: Incomplete</h2>
+            {% endif %}
+            <p class="text-muted">{{ task.date_created }}</p>
+        </div>
+        <div class="card-body detail">
+            <p>{{ task.discription }}
+                <div class="float-end">
+                    <a  class="btn btn-outline-info" href="{% url 'update' task.pk %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
+                    <a class="btn btn-outline-danger" href="{% url 'delete' task.pk %}"><i class="fas fa-trash"></i></a>
+                </div>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock content %}

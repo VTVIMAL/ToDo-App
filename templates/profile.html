@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block Title %}Profile{% endblock Title %}
+
+{% block content %}
+<div class="profile">
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ user.username }}</h1>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ user_form|crispy }}
+                <button class="btn btn-success" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,128 @@
+
+body {
+    background-color: #242423;
+    margin: 0px;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+.navbar {
+    background-color: #CECED1;
+    display: flex;
+    position: relative;
+    
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    margin: 10%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 18px;
+    background-color: #00C240;
+    color: white;
+}
+
+.search {
+    
+    width: 25%;
+    left: 45%;
+    margin-bottom: 2rem;
+}
+
+#search-addon{
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+#search-addon:hover{
+
+    transform: scale(.9);
+}
+
+
+#add-button {
+    margin-bottom: 2rem;
+}
+
+
+.card {
+    max-width: 80%;
+    width: 85%;
+    margin-top: 20px;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.list-items{
+    display: grid;
+    
+}
+
+.list-items>a{
+    grid-area: 1/1;
+}
+
+.task-links {
+    text-decoration: none;
+}
+
+.incomplete {
+    margin: 10%;
+    margin-top: 1rem;
+}
+
+.complete {
+    margin: 10%;
+    margin-top: 1rem;
+}
+
+.task-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.task-create {
+    display: flex;
+    justify-content: center;
+}
+
+.task-edit {
+    display: flex;
+    justify-content: center;
+}
+
+.task-delete {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+
+}
+
