@@ -1,0 +1,268 @@
+
+body {
+    background-color: #242423;
+    margin: 0px;
+}
+
+h1{
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight: 600;
+    
+}
+h1::first-letter{
+    font-size: larger;
+}
+
+p{
+    font-size: 20px;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+.group-heading {
+    text-shadow:2px 2px 5px black;
+}
+
+.navbar {
+    background-image: radial-gradient(circle farthest-corner at -4% -12.9%, rgba(74, 98, 110, 1) 0.3%, rgba(30, 33, 48, 1) 90.2%);
+    display: flex;
+    position: relative;
+    
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+#Home{
+    font-family: 'Wallpoet', cursive;
+    font-weight:normal;
+    background-image: linear-gradient(109.6deg, rgba(61, 245, 167, 1) 11.2%, rgba(9, 111, 224, 1) 91.1%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+#profile-icon {
+    background-image: linear-gradient(64.5deg, rgba(245, 116, 185, 1) 14.7%, rgba(89, 97, 223, 1) 88.7%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.signup, .password {
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.alert {
+    margin: 10%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 18px;
+    background-color: #00C240;
+    color: white;
+    font-size: 20px;
+}
+
+.search {
+    
+    width: 25%;
+    left: 45%;
+    margin-bottom: 2rem;
+}
+
+#search-addon{
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+#search-addon:hover{
+
+    transform: scale(.9);
+}
+
+
+#add-button {
+    margin-bottom: 2rem;
+}
+
+
+.card {
+    max-width: 80%;
+    width: 85%;
+    margin-top: 20px;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.list-items{
+    display: grid;
+    
+}
+
+.list-items>a{
+    grid-area: 1/1;
+}
+
+.task-links {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.incomplete {
+    margin: 10%;
+    margin-top: 1rem;
+}
+
+.complete {
+    margin: 10%;
+    margin-top: 1rem;
+}
+
+.task-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.task-create {
+    display: flex;
+    justify-content: center;
+}
+
+.task-edit {
+    display: flex;
+    justify-content: center;
+}
+
+.task-delete {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+
+}
+
+#profile-card {
+
+    width: 65%;
+    height: auto;
+    border-width: 0;
+    background-color: #242423;
+    border-color: #242423;
+    color: white;
+}
+
+#profile-header {
+    border-bottom-color: white;
+}
+
+#profile-body {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.profile-container {
+    margin-top: 3rem;
+    width: 40%;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    background-image: linear-gradient(64.5deg, rgba(245, 116, 185, 1) 14.7%, rgba(89, 97, 223, 1) 88.7%);;
+}
+
+#create-card, #detail-card, 
+#edit-card, #delete-card, #message-card {
+    border-color: #83a3b4;
+    border-width: 2px;
+    width: 70%;
+    background-image: radial-gradient(circle farthest-corner at -4% -12.9%, rgba(74, 98, 110, 1) 0.3%, rgba(30, 33, 48, 1) 90.2%);
+    color:white;
+    
+}
+#create-header, #detail-header, 
+#edit-header, #delete-header, #message-header {
+    border-bottom-color: whitesmoke;
+}
+
+#login-card {
+
+    width: 400px;
+    height: auto;
+    background-image: linear-gradient(68.4deg, rgba(248, 182, 204, 1) 0.5%, rgba(192, 198, 230, 1) 49%, rgba(225, 246, 240, 1) 99.8%);
+}
+
+#signup-card, #password-card {
+    width: 600px;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(68.4deg, rgba(248, 182, 204, 1) 0.5%, rgba(192, 198, 230, 1) 49%, rgba(225, 246, 240, 1) 99.8%);
+}
+
+.link-edit {
+    color: rgb(0, 162, 255);
+}
+.link-edit:hover {
+    color: rgb(0, 81, 255);;
+    transform: scale(.9);
+}
+
+.link-delete {
+    color: rgba(255, 0, 0, 0.711);
+}
+.link-delete:hover{
+    color:rgb(255, 7, 7);
+    transform: scale(.9);
+}
+
+.status {
+    font-weight: 700;
+}
+
+
+.footer-base {
+    text-align: center;
+    color: #83a3b4;
+    margin-bottom: 1rem;
+}
+
+.social >a {
+    font-size: 30px;
+    margin-left: 20px;
+    color: #6c757d;
+}
+.social>a:hover{
+    color: aqua;
+}
+
+.task-links {
+    color:#6c757d;
+}   
+
+.task-links:hover {
+    color: #00C240;
+}
+
+footer{
+    margin-top: 5%;
+}
