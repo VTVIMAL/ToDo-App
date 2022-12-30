@@ -7,38 +7,59 @@
 <section>
     {% if user.is_authenticated %}
     <div class="alert alert-info text-center" role="alert">
-        Hello {{ user.username }}
+        <i class="fa-regular fa-hand"></i> Hi There, {{ user.username }} ! , you have <strong>{{ count }}</strong> tasks pending
+        {% if count == 0 %}
+        <i class="fa-solid fa-face-laugh-beam"></i>
+        {% elif count > 0 and count <= 2  %}
+        <i class="fa-solid fa-face-smile-wink"></i>
+        {% elif count > 2 and count <= 4  %}
+        <i class="fa-solid fa-face-smile"></i>
+        {% elif count > 4 and count <= 6  %}
+        <i class="fa-solid fa-face-frown-open"></i>
+        {% elif count > 6 and count <= 8  %}
+        <i class="fa-solid fa-face-meh"></i>
+        {% elif count > 8 and count <= 10  %}
+        <i class="fa-solid fa-face-sad-tear"></i>
+        {% else %}
+        <i class="fa-solid fa-face-sad-cry"></i>
+        {% endif %}
     </div>
     {% endif %}
 </section>
 <section class="d-flex justify-content-center">
-    <div class="search">
+    <form class="search" method="GET">
         <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-            aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
+            <input type="search" name="search-area" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" value="{{search_input}}" />
+            <button class="input-group-text border-0" id="search-addon" type="submit" value="Search">
                 <i class="fas fa-search"></i>
-            </span>
+            </button>
         </div>
-    </div>
+    </form>
 </section>
 <div class="d-flex justify-content-center">
-    <a class="btn btn-outline-info" id="add-button" href="{% url 'new_task' %}">Add new Task</a>
+    <a class="btn btn-outline-info" id="add-button" href="{% url 'new_task' %}"
+        data-bs-toggle="tooltip" data-bs-placement="right" title="add-task">
+        <i class="fa-solid fa-plus"></i>
+    </a>
 </div>
+{% if task_count == 0 %}
+<h1 class="text-center text-light">Hoo!...Sooo Empty...😮</h1>
+{% else %}
 <div class="row">
     <div class="col-lg-6">
-        <h1 class="text-center text-danger">INCOMPLETE</h1>
+        <h1 class="group-heading text-center text-danger">INCOMPLETE</h1>
         <div class="card incomplete">
             {% for task in tasks %}
             {% if task.completed == False %}
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action">
-                    <a class="task-links text-secondary" href="{% url 'task_detail' task.pk %} ">
+                    <a class="task-links" href="{% url 'task_detail' task.pk %} ">
                         {{task.title}}
                         <div class="float-end wrap">
-                            <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="right" title="edit"
+                            <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="edit"
                                 href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
-                            <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="right" title="delete"
+                            <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
                                 href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
                         </div>
                     </a>
@@ -49,18 +70,18 @@
     </div>
 </div>
 <div class="col-lg-6">
-    <h1 class="text-center text-success">COMPLETE</h1>
+    <h1 class="group-heading text-center text-success">COMPLETE</h1>
     <div class="card complete">
         {% for task in tasks %}
         {% if task.completed == True %}
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action">
-                <a class="task-links text-secondary" href="{% url 'task_detail' task.pk %} ">
+            <li class="list-group-item list-group-item-action" >
+                <a class="task-links" href="{% url 'task_detail' task.pk %} ">
                     <strike>{{task.title}}</strike>
                     <div class="float-end wrap">
-                        <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="right" title="edit"
+                        <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"
                             href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
-                        <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="right" title="delete"
+                        <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
                             href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
                     </div>
                 </a>
@@ -71,4 +92,5 @@
     </div>
 </div>
 </div>
+{% endif %}
 {% endblock content %}

@@ -6,15 +6,20 @@
 {%block content %}
 <div class="task-delete">
 
-    <div class="card">
-        <div class="card-header">
-            <h1>Delete Task {{ task.title }}</h1>
+    <div class="card" id="delete-card">
+        <div class="card-header" id="delete-header">
+            <div class="float-start">
+                <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <h1>Delete Task</h1>
         </div>
-        <div class="card-body">
-            <p>Are you sure you want to delete the task?</p>
+        <div class="card-body" id="delete-body">
+            <p>Are you sure you want to delete the task <strong>{{ task.title }}</strong> ?</p>
             <form action="" method="post">
                 {% csrf_token %}
-                <button class=" btn btn-danger" type="submit">Confirm</button>
+                <div class="float-end">
+                    <button class=" btn btn-danger" type="submit">Confirm</button>
+                </div>
             </form>
         </div>
     </div>

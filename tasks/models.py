@@ -6,7 +6,7 @@ from django.urls import reverse
 class Task(models.Model):
     '''initialising fiels for the database'''
     title = models.CharField(max_length=100)
-    discription = models.TextField()
+    discription = models.TextField(null=True, blank=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     completed = models.BooleanField(default=False)

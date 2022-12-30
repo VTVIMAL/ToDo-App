@@ -4,17 +4,20 @@
 {% block content %}
 <div class="login">
 
-    <div class="card">
-        <div class="card-header">
+    <div class="card" id="login-card">
+        <div class="card-header" id="login-header">
             <h1>Login</h1>
         </div>
-        <div class="card-body">
+        <div class="card-body" id="login-body">
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button class="btn btn-success" type="submit">Login</button>
             </form>
-            <p>Dont have an account? <a class="btn btn-success" href="{% url 'signup' %}">SignUP</a></p>
+            <hr/>
+            <div class="text-center">
+                <p class="small text-muted">Dont have an account? <a class="btn btn-sm btn-success" href="{% url 'signup' %}">SignUP</a></p>
+            </div>
         </div>
     </div>
 </div>
