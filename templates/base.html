@@ -25,6 +25,7 @@
                     <img src="https://res.cloudinary.com/dne9u9lgx/image/upload/v1672411793/Article%20It%21/Logo/do_gdb07g.png" alt="logo">
                 </a>
                 <!-- Icons -->
+                {% if user.is_authenticated %}
                 <li class="nav-item dropdown pb-1" style="line-height: 1;">
                     <a class="nav-link dropdown-toggle  hidden-arrow d-flex align-items-center" href="{% url 'profile' %}"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,6 +46,7 @@
                         </li>
                     </ul>
                 </li>
+                {% endif %}
             </div>
         </nav>
     </header>
