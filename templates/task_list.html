@@ -47,7 +47,7 @@
 <h1 class="text-center text-light">Hoo!...Sooo Empty...😮</h1>
 {% else %}
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-12 col-lg-6">
         <h1 class="group-heading text-center text-danger">INCOMPLETE</h1>
         <div class="card incomplete">
             {% for task in tasks %}
@@ -56,20 +56,20 @@
                 <li class="list-group-item list-group-item-action">
                     <a class="task-links" href="{% url 'task_detail' task.pk %} ">
                         {{task.title}}
-                        <div class="float-end wrap">
-                            <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="top" title="edit"
-                                href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
-                            <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
-                                href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
-                        </div>
                     </a>
+                    <span class="float-end">
+                        <a class="btn link-edit p-1" data-bs-toggle="tooltip" data-bs-placement="top" title="edit"
+                            href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
+                        <a class="btn link-delete p-1" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
+                            href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
+                    </span>
                 </li>
             </ul>
         {% endif %}
         {% endfor %}
     </div>
 </div>
-<div class="col-lg-6">
+<div class="col-12 col-lg-6">
     <h1 class="group-heading text-center text-success">COMPLETE</h1>
     <div class="card complete">
         {% for task in tasks %}
@@ -78,13 +78,13 @@
             <li class="list-group-item list-group-item-action" >
                 <a class="task-links" href="{% url 'task_detail' task.pk %} ">
                     <strike>{{task.title}}</strike>
-                    <div class="float-end wrap">
-                        <a class="btn link-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"
-                            href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
-                        <a class="btn link-delete" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
-                            href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
-                    </div>
                 </a>
+                    <span class="float-end">
+                        <a class="btn link-edit p-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"
+                            href="{% url 'update' task.id %}"><i class="fa-regular fa-pen-to-square fa-lg"></i></a>
+                        <a class="btn link-delete p-1" data-bs-toggle="tooltip" data-bs-placement="top" title="delete"
+                            href="{% url 'delete' task.id %}"><i class="fas fa-trash"></i></a>
+                    </span>
             </li>
         </ul>
         {% endif %}

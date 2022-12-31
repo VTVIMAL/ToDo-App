@@ -17,6 +17,16 @@ p{
     font-size: 20px;
 }
 
+img {
+    width: 150px;
+}
+
+@media (max-width: 280.98px) {
+    img {
+        width: 100px;
+    }
+}
+
 .row {
     --bs-gutter-x: 0rem;
     --bs-gutter-y: 0;
@@ -37,6 +47,11 @@ p{
     position: relative;
     
 }
+
+.offcanvas {
+    background-image: radial-gradient(circle farthest-corner at -4% -12.9%, rgba(74, 98, 110, 1) 0.3%, rgba(30, 33, 48, 1) 90.2%);
+}
+
 
 .navbar-nav {
     flex-direction: row;
@@ -87,9 +102,15 @@ p{
     margin-bottom: 2rem;
 }
 
+@media (max-width: 991.98px) {
+    .search {
+        width: 250px;
+    }
+}
+
 #search-addon{
-    background-color: transparent;
-    color: whitesmoke;
+    /* background-color: transparent; */
+    color: black;
 }
 
 #search-addon:hover{
@@ -128,6 +149,12 @@ p{
     font-weight: 600;
 }
 
+@media (max-width: 991.98px) {
+    .task-links {
+        font-size: 15px;
+    }
+}
+
 .incomplete {
     margin: 10%;
     margin-top: 1rem;
@@ -137,6 +164,7 @@ p{
     margin: 10%;
     margin-top: 1rem;
 }
+
 
 .task-detail {
     display: flex;
@@ -166,7 +194,7 @@ p{
 
 #profile-card {
 
-    width: 65%;
+    width: 80%;
     height: auto;
     border-width: 0;
     background-color: #242423;
@@ -188,9 +216,18 @@ p{
     width: 40%;
     padding: 8px;
     border-radius: 5px;
+    font-size: 6rem;
     background-color: whitesmoke;
     background-image: linear-gradient(64.5deg, rgba(245, 116, 185, 1) 14.7%, rgba(89, 97, 223, 1) 88.7%);;
 }
+
+@media (max-width: 991.98px) {
+    .profile-container {
+        width: 80%;
+        font-size: 4rem;
+    }
+}
+
 
 #create-card, #detail-card, 
 #edit-card, #delete-card, #message-card {
@@ -201,6 +238,19 @@ p{
     color:white;
     
 }
+
+@media (max-width: 991.98px) {
+    #create-card,
+    #detail-card,
+    #edit-card,
+    #delete-card,
+    #message-card {
+
+        width: 90%;
+
+        }
+}
+
 #create-header, #detail-header, 
 #edit-header, #delete-header, #message-header {
     border-bottom-color: whitesmoke;

@@ -6,12 +6,12 @@
 {% block content %}
 <div class="profile">
     <div class="card" id="profile-card">
+        <div class="float-start">
+            <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
         <div class="card-header " id="profile-header">
-            <div class="float-start">
-                <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
-            </div>
             <div class="container profile-container">
-                <div style="font-size: 6rem ;">
+                <div>
                     <i class="fa-regular fa-circle-user" id="user-icon"></i>
                 </div>
                 <h1>{{ user.username }}</h1>
@@ -21,8 +21,7 @@
             <form action="" method="post">
                 {% csrf_token %}
                 {{ user_form|crispy }}
-                <button class="btn btn-success" type="submit">Save</button>
-                <a class="btn btn-info float-end" href="{% url 'password_change' %}">Change Password</a>
+                <button class="btn  btn-success float-end" style="width: 100%;" type="submit">Save</button>
             </form>
         </div>
     </div>

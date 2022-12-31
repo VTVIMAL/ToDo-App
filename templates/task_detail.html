@@ -6,10 +6,10 @@
 {% block content %}
 <section class="task-detail">
     <div class="card" id="detail-card">
+        <div class="float-start">
+            <a class=" btn btn-outline-info link-back m-2" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
         <div class="card-header" id="detail-header">
-            <div class="float-start">
-                <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
-            </div>
             <h1 class="text-center">{{ task.title }}</h1>
             {% if task.completed == True %}
             <h3 class="status text-success">Completed</h3>
@@ -18,16 +18,16 @@
             {% endif %}
             <p class="text-muted">{{ task.date_created|date:"M d, Y h:i a" }}</p>
         </div>
-        <div class="card-body detail-body">
+        <div class="card-body detail-body text-center">
             <p>{{ task.discription }}
                 <div class="float-end">
                     <a  class="btn link-edit" href="{% url 'update' task.pk %}"
                         data-bs-toggle="tooltip" data-bs-placement="top" title="edit">
-                        <i class="fa-regular fa-pen-to-square fa-lg"></i>
+                        <i class="fa-regular fa-pen-to-square fa-lg me-1"></i>Edit
                     </a>
                     <a class="btn link-delete" href="{% url 'delete' task.pk %}"
                         data-bs-toggle="tooltip" data-bs-placement="top" title="delete">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash me-1"></i>Delete
                     </a>
                 </div>
             </p>

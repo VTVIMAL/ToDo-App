@@ -6,10 +6,10 @@
 {% block content %}
 <section class="task-create">
     <div class="card" id="create-card">
+        <div class="float-start m-2">
+            <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
         <div class="card-header" id="create-header">
-            <div class="float-start">
-                <a class=" btn btn-outline-info link-back" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>
-            </div>
             <h1>Add Task</h1>
         </div>
         <div class="card-body" id="create-body">
